@@ -1,2 +1,49 @@
-﻿body {
+﻿
+#spicy {
+    background-color: #2B4162;
+    color: #F79824;
+}
+
+nav-link, a{
+    color: #F79824;
+}
+
+#dateTime {
+    text-align: center;
+    position: relative;
+    
+}
+
+
+
+.image-container {
+    position: relative;
+    text-align: center;
+    font-family: above the sky script;
+}
+
+.image-centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    footer {
+    background-color: #2B4162;
+    color: #F79824;
+}
+
+
+#socialNetworks {
+    margin-left: 30px;
+}
+
+a {
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+.navbar-toggler {
+    color: #F79824;
 }
