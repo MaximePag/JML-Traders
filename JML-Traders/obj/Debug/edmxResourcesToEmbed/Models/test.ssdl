@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="af458_appointments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateHour" Type="datetime" Nullable="false" />
+    <Property Name="subject" Type="text" Nullable="false" />
+    <Property Name="id_af458_brokers" Type="int" Nullable="false" />
+    <Property Name="id_af458_customers" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="af458_brokers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="af458_customers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lastname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="budget" Type="int" Nullable="false" />
+    <Property Name="id_af458_brokers" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="af458_appointments_af458_brokers_FK">
+    <End Role="af458_brokers" Type="Self.af458_brokers" Multiplicity="1" />
+    <End Role="af458_appointments" Type="Self.af458_appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="af458_brokers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="af458_appointments">
+        <PropertyRef Name="id_af458_brokers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="af458_appointments_af458_customers0_FK">
+    <End Role="af458_customers" Type="Self.af458_customers" Multiplicity="1" />
+    <End Role="af458_appointments" Type="Self.af458_appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="af458_customers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="af458_appointments">
+        <PropertyRef Name="id_af458_customers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="af458_customers_af458_brokers_FK">
+    <End Role="af458_brokers" Type="Self.af458_brokers" Multiplicity="1" />
+    <End Role="af458_customers" Type="Self.af458_customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="af458_brokers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="af458_customers">
+        <PropertyRef Name="id_af458_brokers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="af458_appointments" EntityType="Self.af458_appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="af458_brokers" EntityType="Self.af458_brokers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="af458_customers" EntityType="Self.af458_customers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="af458_appointments_af458_brokers_FK" Association="Self.af458_appointments_af458_brokers_FK">
+      <End Role="af458_brokers" EntitySet="af458_brokers" />
+      <End Role="af458_appointments" EntitySet="af458_appointments" />
+    </AssociationSet>
+    <AssociationSet Name="af458_appointments_af458_customers0_FK" Association="Self.af458_appointments_af458_customers0_FK">
+      <End Role="af458_customers" EntitySet="af458_customers" />
+      <End Role="af458_appointments" EntitySet="af458_appointments" />
+    </AssociationSet>
+    <AssociationSet Name="af458_customers_af458_brokers_FK" Association="Self.af458_customers_af458_brokers_FK">
+      <End Role="af458_brokers" EntitySet="af458_brokers" />
+      <End Role="af458_customers" EntitySet="af458_customers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

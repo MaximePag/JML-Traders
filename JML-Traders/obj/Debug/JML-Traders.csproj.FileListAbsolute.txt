@@ -84,3 +84,8 @@ C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\obj\Debug\JML-Trader
 C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\obj\Debug\JML-Traders.csproj.CopyComplete
 C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\obj\Debug\JML-Traders.dll
 C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\obj\Debug\JML-Traders.pdb
+C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\bin\EntityFramework.dll
+C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\bin\EntityFramework.SqlServer.dll
+C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\bin\EntityFramework.xml
+C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\bin\EntityFramework.SqlServer.xml
+C:\Users\Maxime\OneDrive\Bureau\dev\JML-Traders\JML-Traders\bin\fr\EntityFramework.resources.dll

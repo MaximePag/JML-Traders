@@ -1,5 +1,5 @@
 ﻿
-#spicy {
+#navbar-color {
     background-color: #2B4162;
     color: #F79824;
 }
@@ -8,35 +8,23 @@ nav-link, a{
     color: #F79824;
 }
 
-#dateTime {
-    text-align: center;
-    position: relative;
-    
+nav-link:hover, a:hover {
+    color: #FFFFFF;
 }
 
-
-
-.image-container {
-    position: relative;
-    text-align: center;
-    font-family: above the sky script;
+.title-link a:hover {
+    color: #2B4162;
 }
 
-.image-centered {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.subline-orange {
+    border: 1px #F79824 solid;
 }
-
-    footer {
+.subline-black {
+    border: 1px #000000 solid;
+}
+footer {
     background-color: #2B4162;
     color: #F79824;
-}
-
-
-#socialNetworks {
-    margin-left: 30px;
 }
 
 a {
@@ -46,4 +34,12 @@ a {
 
 .navbar-toggler {
     color: #F79824;
+}
+
+#bg-image{
+    background-image: url(welcome.png);
+    background-size: cover;
+}
+#bg-image h2 a, #bg-image h3 a {
+    opacity: 1;
 }

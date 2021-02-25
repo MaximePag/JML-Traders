@@ -2,45 +2,11 @@
     ViewBag.Title = "Home Page";
 }
 
-<!--<div class="image-container">
-
-    <div class="image-centered" style="color: #817198;">
-        <h1>
-            <b>
-                Ludivine Nadeau
-                <hr />
-                Développeuse Web Junior
-            </b>
-        </h1>
+<div class="row">
+    <div class="col-lg-10 offset-lg-1" id="bg-image">
+        <h4 class="text-center mt-5">@DateTime.Now.ToString("dddd dd MMMM yyyy")</h4>
+        <hr class="subline-orange" />
+        <h3 class="title-link text-center">@Html.ActionLink("Liste des Rendez-Vous du jour", "ListAppointments", "Home")</h3>
+        <hr class="subline-orange" />
     </div>
-</div>-->
-
-
-<div id="dateTime" class="image-container">
-    <img src="~/Content/welcome.jpg" alt="bureau" style="width:100%; opacity: 0.4;">
-    <div class="image-centered" style="color: #817198;">
-        <h2>@DateTime.Now.ToString("dddd dd MMMM yyyy")</h2>
-        <hr />
-        <div>
-            <h3>@Html.ActionLink("Liste des Rendez-Vous du jour", "ListAppointments", "Home")</h3>
-        </div>
-        <hr />
-    </div>
-   </div>
-
-
-    <div class="row">
-        <div class="col-md-4">
-
-
-
-        </div>
-        <div class="col-md-4">
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>
+</div>
