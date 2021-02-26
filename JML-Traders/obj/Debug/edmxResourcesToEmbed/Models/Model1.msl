@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DatabaseJMLTradersModelStoreContainer" CdmEntityContainer="DatabaseJMLTradersEntities">
+    <EntitySetMapping Name="af458_appointments">
+      <EntityTypeMapping TypeName="DatabaseJMLTradersModel.af458_appointments">
+        <MappingFragment StoreEntitySet="af458_appointments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateHour" ColumnName="dateHour" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="id_af458_brokers" ColumnName="id_af458_brokers" />
+          <ScalarProperty Name="id_af458_customers" ColumnName="id_af458_customers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="af458_brokers">
+      <EntityTypeMapping TypeName="DatabaseJMLTradersModel.af458_brokers">
+        <MappingFragment StoreEntitySet="af458_brokers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="af458_customers">
+      <EntityTypeMapping TypeName="DatabaseJMLTradersModel.af458_customers">
+        <MappingFragment StoreEntitySet="af458_customers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="id_af458_brokers" ColumnName="id_af458_brokers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

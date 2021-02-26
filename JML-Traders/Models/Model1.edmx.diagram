@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f93c35befb14335aaf556981e59a536" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseJMLTradersModel.af458_appointments" Width="1.5" PointX="5.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseJMLTradersModel.af458_brokers" Width="1.5" PointX="8" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseJMLTradersModel.af458_customers" Width="1.5" PointX="3.25" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseJMLTradersModel.af458_appointments_af458_brokers_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseJMLTradersModel.af458_appointments_af458_customers0_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseJMLTradersModel.af458_customers_af458_brokers_FK" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

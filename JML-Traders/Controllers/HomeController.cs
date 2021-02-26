@@ -13,9 +13,9 @@ namespace JML_Traders.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult addBrokers()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "bleu.";
 
             return View();
         }
