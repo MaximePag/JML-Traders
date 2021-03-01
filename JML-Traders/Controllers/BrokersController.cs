@@ -19,6 +19,22 @@ namespace JML_Traders.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult addBrokers([Bind(Include = "id,lastname,firstname,mail,phoneNumber")] af458_brokers af458_brokers)
+        {
+            if (ModelState.IsValid)
+            {
+                db.af458_brokers.Add(af458_brokers);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(af458_brokers);
+            }
+        }
+
         // GET: Brokers
         public ActionResult Index()
         {
@@ -49,19 +65,7 @@ namespace JML_Traders.Controllers
         // POST: Brokers/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,lastname,firstname,mail,phoneNumber")] af458_brokers af458_brokers)
-        {
-            if (ModelState.IsValid)
-            {
-                db.af458_brokers.Add(af458_brokers);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(af458_brokers);
-        }
+        
 
         // GET: Brokers/Edit/5
         public ActionResult Edit(int? id)

@@ -1,10 +1,14 @@
 ﻿
+.btn-orange {
+    background-color: #F79824;
+}
+
 #navbar-color {
     background-color: #2B4162;
     color: #F79824;
 }
 
-nav-link, a{
+nav-link, a {
     color: #F79824;
 }
 
@@ -19,9 +23,11 @@ nav-link:hover, a:hover {
 .subline-orange {
     border: 1px #F79824 solid;
 }
+
 .subline-black {
     border: 1px #000000 solid;
 }
+
 footer {
     background-color: #2B4162;
     color: #F79824;
@@ -36,10 +42,11 @@ a {
     color: #F79824;
 }
 
-#bg-image{
+#bg-image {
     background-image: url(welcome.png);
     background-size: cover;
 }
+
 #bg-image h2 a, #bg-image h3 a {
     opacity: 1;
 }
