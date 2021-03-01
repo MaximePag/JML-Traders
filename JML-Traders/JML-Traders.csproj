@@ -213,7 +213,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Brokers\addBrokers.cshtml" />
-    <Content Include="Views\Brokers\deleteBrokers.cshtml" />
+    <Content Include="Views\Brokers\Delete.cshtml" />
     <Content Include="Views\Brokers\Details.cshtml" />
     <Content Include="Views\Brokers\Edit.cshtml" />
     <Content Include="Views\Brokers\Index.cshtml" />
