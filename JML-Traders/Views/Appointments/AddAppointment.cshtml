@@ -1,0 +1,58 @@
+﻿@model JML_Traders.Models.af458_appointments
+
+@{
+    ViewBag.Title = "Prise de rendez-vous";
+}
+<a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-left"></i> Retour à l'accueil</a>
+<h2 class="text-center">Création d'un rendez-vous</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal col-lg-8 offset-lg-2">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.dateHour,"Date et Heure du rendez-vous :", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dateHour, new { htmlAttributes = new { @class = "form-control", @placeholder = "Date sous fomat : jj / mm / aaaa hh:mm " } })
+                @Html.ValidationMessageFor(model => model.dateHour, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.subject, "Objet du rendez-vous : ", htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.subject, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.subject, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_af458_brokers, "Liste des courtiers :", htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_af458_brokers", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_af458_brokers, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_af458_customers, "Liste des clients :", htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_af458_customers", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_af458_customers, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Soumettre" class="btn btn-orange" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    <a class="btn btn-secondary my-3" href="@Url.Action("listAppointments", "Appointments")"><i class="fas fa-chevron-left"></i> Retour à la liste des rendez-vous</a>
+</div>

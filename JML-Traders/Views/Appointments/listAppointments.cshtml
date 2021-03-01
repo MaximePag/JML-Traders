@@ -1,0 +1,48 @@
+﻿@model IEnumerable<JML_Traders.Models.af458_appointments>
+
+@{
+    ViewBag.Title = "Liste des rendez-vous";
+}
+
+<a class="btn btn-success mt-3" href="@Url.Action("AddAppointment","Appointments")"><i class="fas fa-plus"></i> Créer un nouveau rendez-vous</a>
+<h2 class="text-center mb-5">Liste des rendez-vous</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dateHour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.af458_brokers.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.af458_customers.lastname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateHour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.af458_brokers.lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.af458_customers.lastname)
+        </td>
+        <td>
+            <a class="btn btn-blue mx-2" href="@Url.Action("Appointment", "Appointments", new { id = item.id })"><i class="fas fa-user"> Rendez-vous</i></a>
+            <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-times"></i> Supprimer </a>
+        </td>
+    </tr>
+}
+
+</table>

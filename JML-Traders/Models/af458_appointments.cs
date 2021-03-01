@@ -11,16 +11,21 @@ namespace JML_Traders.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class af458_appointments
     {
         public int id { get; set; }
         public System.DateTime dateHour { get; set; }
+
         public string subject { get; set; }
+
         public int id_af458_brokers { get; set; }
+
         public int id_af458_customers { get; set; }
-    
+
         public virtual af458_brokers af458_brokers { get; set; }
+
         public virtual af458_customers af458_customers { get; set; }
     }
 }
