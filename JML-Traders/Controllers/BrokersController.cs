@@ -27,7 +27,7 @@ namespace JML_Traders.Controllers
             {
                 db.af458_brokers.Add(af458_brokers);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("listBrokers");
             }
             else
             {
@@ -36,13 +36,13 @@ namespace JML_Traders.Controllers
         }
 
         // GET: Brokers
-        public ActionResult Index()
+        public ActionResult listBrokers()
         {
             return View(db.af458_brokers.ToList());
         }
 
-        // GET: Brokers/Details/5
-        public ActionResult Details(int? id)
+        // GET: Brokers/profilBrokers/5
+        public ActionResult profilBrokers(int? id)
         {
             if (id == null)
             {
@@ -54,12 +54,6 @@ namespace JML_Traders.Controllers
                 return HttpNotFound();
             }
             return View(af458_brokers);
-        }
-
-        // GET: Brokers/Create
-        public ActionResult Create()
-        {
-            return View();
         }
 
         // POST: Brokers/Create
@@ -93,7 +87,7 @@ namespace JML_Traders.Controllers
             {
                 db.Entry(af458_brokers).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("listBrokers");
             }
             return View(af458_brokers);
         }
@@ -101,6 +95,7 @@ namespace JML_Traders.Controllers
         // GET: Brokers/Delete/5
         public ActionResult Delete(int? id)
         {
+            /*
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -111,19 +106,25 @@ namespace JML_Traders.Controllers
                 return HttpNotFound();
             }
             return View(af458_brokers);
+            */
+            af458_brokers af458_brokers = db.af458_brokers.Find(id);
+            db.af458_brokers.Remove(af458_brokers);
+            db.SaveChanges();
+            return RedirectToAction("listBrokers");
+
         }
 
         // POST: Brokers/Delete/5
-        [HttpPost, ActionName("Delete")]
+        /*[HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             af458_brokers af458_brokers = db.af458_brokers.Find(id);
             db.af458_brokers.Remove(af458_brokers);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("listBrokers");
         }
-
+        */
         protected override void Dispose(bool disposing)
         {
             if (disposing)

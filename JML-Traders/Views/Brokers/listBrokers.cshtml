@@ -1,0 +1,68 @@
+﻿@model IEnumerable<JML_Traders.Models.af458_brokers>
+
+@{
+    ViewBag.Title = "Liste des Courtiers";
+}
+<a class="btn btn-success mt-3" href="@Url.Action("addBrokers", "Brokers")"><i class="fas fa-plus"></i> Créer un nouveau courtier</a>
+
+<h2 class="text-center mb-5">Liste des Courtiers</h2>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de vouloir supprimer ce courtier ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="form-actions no-color">
+                    <button type="submit" value="Delete" class="btn-lg btn-danger">Supprimer</button>
+                    <button type="button" class="btn-lg btn-secondary float-right" data-dismiss="modal">Annuler</button>
+                    <a id="gneu" href="">gneu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phoneNumber)
+            </td>
+            <td>
+                <a class="btn btn-blue mx-2" href="@Url.Action("profilBrokers", "Brokers", new { id = item.id })"><i class="fas fa-user"></i> Profil</a>
+                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-times"></i> Supprimer</a>
+            </td>
+        </tr>
+    }
+
+</table>
