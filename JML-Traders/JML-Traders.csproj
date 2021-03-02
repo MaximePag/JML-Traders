@@ -216,7 +216,7 @@
     <Content Include="Views\Brokers\addBrokers.cshtml" />
     <Content Include="Views\Brokers\Delete.cshtml" />
     <Content Include="Views\Brokers\profilBrokers.cshtml" />
-    <Content Include="Views\Brokers\Edit.cshtml" />
+    <Content Include="Views\Brokers\editBrokers.cshtml" />
     <Content Include="Views\Brokers\listBrokers.cshtml" />
     <Content Include="Views\af458_customers\Delete.cshtml" />
     <Content Include="Views\af458_customers\Details.cshtml" />

@@ -16,17 +16,14 @@
                     <span class="fas fa-times" aria-hidden="true"></span>
                 </button>
             </div>
-            <div class="modal-footer d-block">
-                <div class="form-actions no-color">
-                    <button type="submit" value="Delete" class="btn-lg btn-danger">Supprimer</button>
-                    <button type="button" class="btn-lg btn-secondary float-right" data-dismiss="modal">Annuler</button>
-                    <a id="gneu" href="">gneu</a>
-                </div>
+            <div class="modal-footer d-block text-center">
+                <a class="btn-lg btn-danger" href="">Supprimer</a>
+                <a class="btn-lg btn-secondary" data-dismiss="modal">Annuler</a>
             </div>
         </div>
     </div>
 </div>
-<table class="table">
+<table class="table table-responsive-lg table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.lastname)
@@ -66,3 +63,5 @@
     }
 
 </table>
+<script src="~/Scripts/script.js"></script>
+

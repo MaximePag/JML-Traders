@@ -61,8 +61,8 @@ namespace JML_Traders.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         
 
-        // GET: Brokers/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Brokers/editBrokers/5
+        public ActionResult editBrokers(int? id)
         {
             if (id == null)
             {
@@ -76,12 +76,12 @@ namespace JML_Traders.Controllers
             return View(af458_brokers);
         }
 
-        // POST: Brokers/Edit/5
+        // POST: Brokers/editBrokers/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,lastname,firstname,mail,phoneNumber")] af458_brokers af458_brokers)
+        public ActionResult editBrokers([Bind(Include = "id,lastname,firstname,mail,phoneNumber")] af458_brokers af458_brokers)
         {
             if (ModelState.IsValid)
             {
