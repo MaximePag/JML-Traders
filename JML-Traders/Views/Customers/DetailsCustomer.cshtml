@@ -1,15 +1,15 @@
 ﻿@model JML_Traders.Models.af458_customers
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Profil  client";
 }
 
-<h2>Details</h2>
+<a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-left"></i> Retour à l'accueil</a>
+<h2 class="text-center">Fiche profil d'un client</h2>
 
 <div>
-    <h4>af458_customers</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-lg-8 offset-lg-2">
         <dt>
             @Html.DisplayNameFor(model => model.lastname)
         </dt>
@@ -60,7 +60,8 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div>
+    <p class="text-center"><a class="btn btn-blue my-3 text-center" href="/Customers/EditCustomer/@Html.DisplayFor(model => model.id)"><i class="fas fa-pencil-alt"></i> Modification du profil</a></p>
+    <p><a class="btn btn-secondary my-3" href="@Url.Action("Index", "Customers")"><i class="fas fa-chevron-left"></i> Retour à la liste des clients</a></p>
+
+</div>

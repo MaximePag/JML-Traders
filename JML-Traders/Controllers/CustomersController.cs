@@ -22,7 +22,7 @@ namespace JML_Traders.Controllers
         }
 
         // GET: Customers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult DetailsCustomer(int? id)
         {
             if (id == null)
             {
@@ -62,7 +62,7 @@ namespace JML_Traders.Controllers
         }
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult EditCustomer(int? id)
         {
             if (id == null)
             {
@@ -82,7 +82,7 @@ namespace JML_Traders.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
+        public ActionResult EditCustomer([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +95,7 @@ namespace JML_Traders.Controllers
         }
 
         // GET: Customers/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult DeleteCustomer(int? id)
         {
             if (id == null)
             {
