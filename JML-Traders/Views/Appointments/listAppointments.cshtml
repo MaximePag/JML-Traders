@@ -4,10 +4,28 @@
     ViewBag.Title = "Liste des rendez-vous";
 }
 
-<a class="btn btn-success mt-3" href="@Url.Action("AddAppointment","Appointments")"><i class="fas fa-plus"></i> Créer un nouveau rendez-vous</a>
-<h2 class="text-center mb-5">Liste des rendez-vous</h2>
+<a class="btn btn-success mt-3" href="@Url.Action("AddAppointment","Appointments")"><i class="far fa-calendar-plus"></i> Créer un nouveau rendez-vous</a>
 
-<table class="table">
+<h2 class="text-center mb-5">Liste des rendez-vous :</h2>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de vouloir supprimer ce rendez-vous ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-footer d-block text-center">
+                <a id="deleteAnchor" class="btn-lg btn-danger" href="">Supprimer</a>
+                <a class="btn-lg btn-secondary" data-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-responsive-lg table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.dateHour)
@@ -24,25 +42,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateHour)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.subject)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.af458_brokers.lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.af458_customers.lastname)
-        </td>
-        <td>
-            <a class="btn btn-blue mx-2" href="@Url.Action("Appointment", "Appointments", new { id = item.id })"><i class="fas fa-user"> Rendez-vous</i></a>
-            <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-times"></i> Supprimer </a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateHour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.af458_brokers.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.af458_customers.lastname)
+            </td>
+            <td>
+                <a class="btn btn-blue mx-2" href="@Url.Action("Appointment", "Appointments", new { id = item.id })"><i class="fas fa-calendar-alt"></i> Rendez-vous</a>
+                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-calendar-times"></i> Supprimer </a>
+            </td>
+        </tr>
+    }
 
 </table>

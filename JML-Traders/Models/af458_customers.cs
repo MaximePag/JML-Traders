@@ -11,6 +11,7 @@ namespace JML_Traders.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class af458_customers
     {
@@ -21,7 +22,10 @@ namespace JML_Traders.Models
         }
     
         public int id { get; set; }
+
+        [Display(Name = "Nom du client :")]
         public string lastname { get; set; }
+        
         public string firstname { get; set; }
         public string mail { get; set; }
         public string phoneNumber { get; set; }
