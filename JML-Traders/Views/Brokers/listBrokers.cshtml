@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Liste des Courtiers";
 }
-<a class="btn btn-success mt-3" href="@Url.Action("addBrokers", "Brokers")"><i class="fas fa-plus"></i> Créer un nouveau courtier</a>
+<a class="btn btn-success mt-3" href="@Url.Action("addBrokers", "Brokers")"><i class="fas fa-user-plus"></i> Créer un nouveau courtier</a>
 
 <h2 class="text-center mb-5">Liste des Courtiers</h2>
 
@@ -17,7 +17,7 @@
                 </button>
             </div>
             <div class="modal-footer d-block text-center">
-                <a class="btn-lg btn-danger" href="">Supprimer</a>
+                <a id="deleteAnchor" class="btn-lg btn-danger" href="">Supprimer</a>
                 <a class="btn-lg btn-secondary" data-dismiss="modal">Annuler</a>
             </div>
         </div>
@@ -57,11 +57,10 @@
             </td>
             <td>
                 <a class="btn btn-blue mx-2" href="@Url.Action("profilBrokers", "Brokers", new { id = item.id })"><i class="fas fa-user"></i> Profil</a>
-                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-times"></i> Supprimer</a>
+                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-user-times"></i> Supprimer</a>
             </td>
         </tr>
     }
 
 </table>
-<script src="~/Scripts/script.js"></script>
 
