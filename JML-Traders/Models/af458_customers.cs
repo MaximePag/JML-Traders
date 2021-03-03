@@ -23,22 +23,22 @@ namespace JML_Traders.Models
     
         public int id { get; set; }
 
-        [Display(Name = "Nom : ")]
+        [Display(Name = "Nom du client")]
         public string lastname { get; set; }
 
-        [Display(Name = "Prénom : ")]
+        [Display(Name = "Prénom  du client ")]
         public string firstname { get; set; }
 
-        [Display(Name = "Adresse mail : ")]
+        [Display(Name = "Adresse mail du client ")]
         public string mail { get; set; }
 
-        [Display(Name = "Numéro de téléphone : ")]
+        [Display(Name = "Numéro de téléphone du client ")]
         public string phoneNumber { get; set; }
 
-        [Display(Name = "Budget: ")]
+        [Display(Name = "Budget ")]
         public int budget { get; set; }
 
-        [Display(Name = "Nom du courtier : ")]
+        [Display(Name = "Nom du courtier ")]
         public int id_af458_brokers { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

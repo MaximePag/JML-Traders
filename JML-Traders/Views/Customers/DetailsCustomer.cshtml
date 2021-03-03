@@ -7,6 +7,23 @@
 <a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-left"></i> Retour à l'accueil</a>
 <h2 class="text-center">Fiche profil d'un client</h2>
 
+<div class="modal fade" id="deleteProfilCustomerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de vouloir supprimer ce client ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-footer d-block text-center">
+                <a id="deleteAnchor" class="btn-lg btn-danger" href="/Customers/DeleteCustomer/@Html.DisplayFor(model => model.id)">Supprimer</a>
+                <a class="btn-lg btn-secondary" data-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div>
     <hr />
     <dl class="dl-horizontal col-lg-8 offset-lg-2">
@@ -60,8 +77,9 @@
 
     </dl>
 </div>
-<div>
-    <p class="text-center"><a class="btn btn-blue my-3 text-center" href="/Customers/EditCustomer/@Html.DisplayFor(model => model.id)"><i class="fas fa-pencil-alt"></i> Modification du profil</a></p>
-    <p><a class="btn btn-secondary my-3" href="@Url.Action("Index", "Customers")"><i class="fas fa-chevron-left"></i> Retour à la liste des clients</a></p>
+<div class="text-center">
+    <a class="btn btn-orange my-3" href="/Customers/EditCustomer/@Html.DisplayFor(model => model.id)"><i class="fas fa-pencil-alt"></i> Modification du profil</a>
+    <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteProfilCustomerModal"><i class="fas fa-user-times"></i>  Supprimer</a>
+</div> 
+    <a class="btn btn-secondary my-3" href="@Url.Action("Index", "Customers")"><i class="fas fa-chevron-left"></i> Retour à la liste des clients</a>
 
-</div>
