@@ -97,16 +97,20 @@ namespace JML_Traders.Controllers
         // GET: Customers/Delete/5
         public ActionResult DeleteCustomer(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //af458_customers af458_customers = db.af458_customers.Find(id);
+            //if (af458_customers == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(af458_customers);
             af458_customers af458_customers = db.af458_customers.Find(id);
-            if (af458_customers == null)
-            {
-                return HttpNotFound();
-            }
-            return View(af458_customers);
+            db.af458_customers.Remove(af458_customers);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // POST: Customers/Delete/5
