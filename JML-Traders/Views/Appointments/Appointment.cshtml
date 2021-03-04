@@ -8,7 +8,7 @@
 <h2 class="text-center mb-5">Détails du rendez-vous de @Html.DisplayFor(model => model.af458_brokers.lastname) : </h2>
 <hr />
 
-<div class="modal fade" id="deleteModalAppointment" tabindex="-1" arial-labelledy="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteAppointmentModalDetails" tabindex="-1" arial-labelledy="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -42,5 +42,5 @@
 </div>
 <div class="col-lg-12 text-center">
     <a class="btn btn-orange mx-2 my-3" href="/Appointments/editAppointments/@Html.DisplayFor(model => model.id)"><i class="fas fa-edit"></i>Modifier le rendez vous</a>
-    <a class="btn btn-danger mx-2 my-3" data-toggle="modal" data-target="#deleteModalAppointment"><i class="fas fa-times"></i> Supprimer le rendez vous</a>
+    <a class="btn btn-danger mx-2 my-3" data-toggle="modal" data-target="#deleteAppointmentModalDetails"><i class="fas fa-times"></i> Supprimer le rendez vous</a>
 </div>

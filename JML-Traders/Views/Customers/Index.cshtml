@@ -8,7 +8,7 @@
 
 <h2 class="text-center mb-5">Liste des clients</h2>
 
-<div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCustomersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -71,7 +71,7 @@
             </td>
             <td>
                 <a class="btn btn-blue mx-2" href="@Url.Action("DetailsCustomer", "Customers", new { id = item.id })"><i class="fas fa-user"></i> Profil</a>
-                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteCustomerModal" data-id="@Html.Raw(item.id)"><i class="fas fa-user-times"></i>  Supprimer</a>
+                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteCustomersModal" data-id="@Html.Raw(item.id)"><i class="fas fa-user-times"></i>  Supprimer</a>
 
             </td>
         </tr>

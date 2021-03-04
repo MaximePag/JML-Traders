@@ -7,7 +7,7 @@
 
 <h2 class="text-center mb-5">Liste des Courtiers</h2>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteBrokersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,7 +57,7 @@
             </td>
             <td>
                 <a class="btn btn-blue mx-2" href="@Url.Action("profilBrokers", "Brokers", new { id = item.id })"><i class="fas fa-user"></i> Profil</a>
-                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteModal" data-id="@Html.Raw(item.id)"><i class="fas fa-user-times"></i> Supprimer</a>
+                <a class="btn btn-danger mx-2" data-toggle="modal" data-target="#deleteBrokersModal" data-id="@Html.Raw(item.id)"><i class="fas fa-user-times"></i> Supprimer</a>
             </td>
         </tr>
     }

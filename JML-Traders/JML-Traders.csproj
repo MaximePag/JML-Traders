@@ -189,8 +189,6 @@
     </Content>
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\Script.js" />
-    <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -204,12 +202,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Brokers\addBrokers.cshtml" />
-    <Content Include="Views\Brokers\Delete.cshtml" />
     <Content Include="Views\Brokers\profilBrokers.cshtml" />
-    <Content Include="Views\Brokers\Edit.cshtml" />
-    <Content Include="Views\Brokers\Index.cshtml" />
     <Content Include="Views\Appointments\AddAppointment.cshtml" />
-    <Content Include="Views\Appointments\Delete.cshtml" />
     <Content Include="Views\Appointments\Appointment.cshtml" />
     <Content Include="Views\Appointments\editAppointments.cshtml" />
     <Content Include="Views\Appointments\listAppointments.cshtml" />
@@ -219,15 +213,11 @@
     <Content Include="Views\af458_customers\Edit.cshtml" />
     <Content Include="Views\af458_customers\Index.cshtml" />
     <Content Include="Views\Customers\addCustomer.cshtml" />
-    <Content Include="Views\Customers\DeleteCustomer.cshtml" />
     <Content Include="Views\Customers\DetailsCustomer.cshtml" />
     <Content Include="Views\Customers\EditCustomer.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Customers\" />
-    <Folder Include="Views\Appointments\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

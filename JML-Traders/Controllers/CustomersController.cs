@@ -95,7 +95,7 @@ namespace JML_Traders.Controllers
         }
 
         // GET: Customers/Delete/5
-        public ActionResult DeleteCustomer(int? id)
+        public ActionResult Delete(int? id)
         {
             //if (id == null)
             //{
@@ -114,15 +114,15 @@ namespace JML_Traders.Controllers
         }
 
         // POST: Customers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            af458_customers af458_customers = db.af458_customers.Find(id);
-            db.af458_customers.Remove(af458_customers);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    af458_customers af458_customers = db.af458_customers.Find(id);
+        //    db.af458_customers.Remove(af458_customers);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

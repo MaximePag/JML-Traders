@@ -9,7 +9,7 @@
 <h2 class="text-center mb-5">Profil de @Html.DisplayFor(model => model.firstname) @Html.DisplayFor(model => model.lastname)</h2>
 <hr />
 
-<div class="modal fade" id="deleteModalProfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteBrokersModalProfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -41,6 +41,6 @@
     </div>
     <div class="col-lg-12 text-center">
         <a class="btn btn-orange mx-2 my-3" href="/Brokers/editBrokers/@Html.DisplayFor(model => model.id)"><i class="fas fa-edit"></i> Modifier</a>
-        <a class="btn btn-danger mx-2 my-3" data-toggle="modal" data-target="#deleteModalProfil"><i class="fas fa-times"></i> Supprimer</a>
+        <a class="btn btn-danger mx-2 my-3" data-toggle="modal" data-target="#deleteBrokersModalProfil"><i class="fas fa-times"></i> Supprimer</a>
     </div>
 </div>
