@@ -1,50 +1,46 @@
 ﻿@model JML_Traders.Models.af458_brokers
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Profil du courtier";
 }
 
-<h2>Details</h2>
+<a class="btn btn-secondary mt-3" href="@Url.Action("listBrokers", "Brokers")"><i class="fas fa-chevron-left"></i> Retour à la liste des courtiers</a>
 
-<div>
-    <h4>af458_brokers</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.lastname)
-        </dt>
+<h2 class="text-center mb-5">Profil de @Html.DisplayFor(model => model.firstname) @Html.DisplayFor(model => model.lastname)</h2>
+<hr />
 
-        <dd>
-            @Html.DisplayFor(model => model.lastname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.firstname)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.firstname)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.mail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.mail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.phoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.phoneNumber)
-        </dd>
-
-    </dl>
+<div class="modal fade" id="deleteModalProfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de vouloir supprimer ce courtier ?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="fas fa-times" aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-footer d-block text-center">
+                <a class="btn-lg btn-danger" href="/Brokers/Delete/@Html.DisplayFor(model => model.id)">Supprimer</a>
+                <a class="btn-lg btn-secondary" data-dismiss="modal">Annuler</a>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="row">
+    <div class="col-lg-8 offset-lg-2 text-center">
+        <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.lastname)</h4>
+        <h5>@Html.DisplayFor(model => model.lastname)</h5>
+
+        <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.firstname)</h4>
+        <h5>@Html.DisplayFor(model => model.firstname)</h5>
+
+        <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.mail)</h4>
+        <h5>@Html.DisplayFor(model => model.mail)</h5>
+
+        <h4 class="font-weight-bold">@Html.DisplayNameFor(model => model.phoneNumber)</h4>
+        <h5>@Html.DisplayFor(model => model.phoneNumber)</h5>
+    </div>
+    <div class="col-lg-12 text-center">
+        <a class="btn btn-orange mx-2 my-3" href="/Brokers/editBrokers/@Html.DisplayFor(model => model.id)"><i class="fas fa-edit"></i> Modifier</a>
+        <a class="btn btn-danger mx-2 my-3" data-toggle="modal" data-target="#deleteModalProfil"><i class="fas fa-times"></i> Supprimer</a>
+    </div>
+</div>

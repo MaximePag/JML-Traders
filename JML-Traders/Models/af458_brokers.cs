@@ -24,25 +24,16 @@ namespace JML_Traders.Models
     
         public int id { get; set; }
 
-<<<<<<< HEAD
+        [Display(Name = "Nom du courtier :")]
         public string lastname { get; set; }
 
+        [Display(Name = "Prénom du courtier :")]
         public string firstname { get; set; }
 
+        [Display(Name = "Adresse mail du courtier :")]
         public string mail { get; set; }
 
-=======
-        [Display(Name = "Nom du courtier ")]
-        public string lastname { get; set; }
-
-        [Display(Name = "Prénom ")]
-        public string firstname { get; set; }
-
-        [Display(Name = "Adresse mail ")]
-        public string mail { get; set; }
-
-        [Display(Name = "Numéro de téléphone ")]
->>>>>>> Ludivine
+        [Display(Name = "Numéro de téléphone du courtier :")]
         public string phoneNumber { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
