@@ -11,7 +11,8 @@ namespace JML_Traders.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class af458_customers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,23 @@ namespace JML_Traders.Models
         }
     
         public int id { get; set; }
+
+        [Display(Name = "Nom du client")]
         public string lastname { get; set; }
+
+        [Display(Name = "Prénom  du client ")]
         public string firstname { get; set; }
+
+        [Display(Name = "Adresse mail du client ")]
         public string mail { get; set; }
+
+        [Display(Name = "Numéro de téléphone du client ")]
         public string phoneNumber { get; set; }
+
+        [Display(Name = "Budget ")]
         public int budget { get; set; }
+
+        [Display(Name = "Nom du courtier ")]
         public int id_af458_brokers { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

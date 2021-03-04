@@ -10,19 +10,19 @@ using JML_Traders.Models;
 
 namespace JML_Traders.Controllers
 {
-    public class af458_customersController : Controller
+    public class CustomersController : Controller
     {
         private DatabaseJMLTradersEntities db = new DatabaseJMLTradersEntities();
 
-        // GET: af458_customers
+        // GET: Customers
         public ActionResult Index()
         {
             var af458_customers = db.af458_customers.Include(a => a.af458_brokers);
             return View(af458_customers.ToList());
         }
 
-        // GET: af458_customers/Details/5
-        public ActionResult Details(int? id)
+        // GET: Customers/Details/5
+        public ActionResult DetailsCustomer(int? id)
         {
             if (id == null)
             {
@@ -36,19 +36,19 @@ namespace JML_Traders.Controllers
             return View(af458_customers);
         }
 
-        // GET: af458_customers/Create
-        public ActionResult Create()
+        // GET: Customers/Create
+        public ActionResult addCustomer()
         {
             ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname");
             return View();
         }
 
-        // POST: af458_customers/Create
+        // POST: Customers/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
+        public ActionResult addCustomer([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
         {
             if (ModelState.IsValid)
             {
@@ -61,8 +61,8 @@ namespace JML_Traders.Controllers
             return View(af458_customers);
         }
 
-        // GET: af458_customers/Edit/5
-        public ActionResult Edit(int? id)
+        // GET: Customers/Edit/5
+        public ActionResult EditCustomer(int? id)
         {
             if (id == null)
             {
@@ -77,12 +77,12 @@ namespace JML_Traders.Controllers
             return View(af458_customers);
         }
 
-        // POST: af458_customers/Edit/5
+        // POST: Customers/Edit/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
+        public ActionResult EditCustomer([Bind(Include = "id,lastname,firstname,mail,phoneNumber,budget,id_af458_brokers")] af458_customers af458_customers)
         {
             if (ModelState.IsValid)
             {
@@ -94,22 +94,26 @@ namespace JML_Traders.Controllers
             return View(af458_customers);
         }
 
-        // GET: af458_customers/Delete/5
-        public ActionResult Delete(int? id)
+        // GET: Customers/Delete/5
+        public ActionResult DeleteCustomer(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //af458_customers af458_customers = db.af458_customers.Find(id);
+            //if (af458_customers == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(af458_customers);
             af458_customers af458_customers = db.af458_customers.Find(id);
-            if (af458_customers == null)
-            {
-                return HttpNotFound();
-            }
-            return View(af458_customers);
+            db.af458_customers.Remove(af458_customers);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
-        // POST: af458_customers/Delete/5
+        // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
