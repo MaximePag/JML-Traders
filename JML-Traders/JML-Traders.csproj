@@ -208,10 +208,6 @@
     <Content Include="Views\Appointments\editAppointments.cshtml" />
     <Content Include="Views\Appointments\listAppointments.cshtml" />
     <Content Include="Views\Brokers\listBrokers.cshtml" />
-    <Content Include="Views\af458_customers\Delete.cshtml" />
-    <Content Include="Views\af458_customers\Details.cshtml" />
-    <Content Include="Views\af458_customers\Edit.cshtml" />
-    <Content Include="Views\af458_customers\Index.cshtml" />
     <Content Include="Views\Customers\addCustomer.cshtml" />
     <Content Include="Views\Customers\DetailsCustomer.cshtml" />
     <Content Include="Views\Customers\EditCustomer.cshtml" />
