@@ -11,16 +11,33 @@ namespace JML_Traders.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class af458_appointments
     {
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public af458_appointments()
+        { 
+        }
+
         public int id { get; set; }
+
+        [Display(Name = "Date et Heure du rendez-vous :")]
         public System.DateTime dateHour { get; set; }
+
+        [Display(Name = "Objet du rendez-vous :")]
         public string subject { get; set; }
+
         public int id_af458_brokers { get; set; }
+
         public int id_af458_customers { get; set; }
+        
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual af458_brokers af458_brokers { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual af458_customers af458_customers { get; set; }
     }
 }
