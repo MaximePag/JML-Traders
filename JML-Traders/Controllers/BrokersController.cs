@@ -16,6 +16,7 @@ namespace JML_Traders.Controllers
 
         public ActionResult addBrokers()
         {
+            ViewData["queryResult"] = "true";
             return View();
         }
 
@@ -23,16 +24,28 @@ namespace JML_Traders.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult addBrokers([Bind(Include = "id,lastname,firstname,mail,phoneNumber")] af458_brokers af458_brokers)
         {
-            if (ModelState.IsValid)
+            string mail = af458_brokers.mail;
+            if (db.af458_brokers.SqlQuery("SELECT * FROM af458_brokers WHERE af458_brokers.mail = '" + mail + "'").Count() == 0)
             {
                 db.af458_brokers.Add(af458_brokers);
                 db.SaveChanges();
-                return RedirectToAction("listBrokers");
+                return RedirectToAction("Index");
             }
             else
             {
-                return View(af458_brokers);
+                ViewData["queryResult"] = "false";
+                return View();
             }
+            //if (ModelState.IsValid)
+            //{
+            //    db.af458_brokers.Add(af458_brokers);
+            //    db.SaveChanges();
+            //    return RedirectToAction("listBrokers");
+            //}
+            //else
+            //{
+            //    return View(af458_brokers);
+            //}
         }
 
         // GET: Brokers

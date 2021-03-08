@@ -1,21 +1,28 @@
 ﻿@model JML_Traders.Models.af458_appointments
 
 @{
+    var queryResult = ViewData["queryResult"].ToString();
+}
+
+@{
     ViewBag.Title = "Prise de rendez-vous";
 }
 <a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-left"></i> Retour à l'accueil</a>
 <h2 class="text-center">Création d'un rendez-vous</h2>
+@if (queryResult == "false")
+{
+    <p class="text-danger text-center font-weight-bold">Créneau horaire indisponible</p>
+}
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal col-lg-8 offset-lg-2">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.dateHour,"Date et Heure du rendez-vous :", htmlAttributes: new { @class = "control-label col-md-4" })
+            @Html.LabelFor(model => model.dateHour, "Date et Heure du rendez-vous :", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.dateHour, new { htmlAttributes = new { @class = "form-control", @placeholder = "Date sous fomat : jj / mm / aaaa hh:mm " } })
                 @Html.ValidationMessageFor(model => model.dateHour, "", new { @class = "text-danger" })

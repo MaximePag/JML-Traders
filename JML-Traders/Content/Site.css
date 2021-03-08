@@ -60,3 +60,10 @@ a {
 #bg-image h2 a, #bg-image h3 a {
     opacity: 1;
 }
+
+.table{
+    background: transparent;
+}
+.table td, .table th {
+    border-top: 1px #000000 solid;
+}

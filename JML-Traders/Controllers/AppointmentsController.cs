@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -39,6 +40,7 @@ namespace JML_Traders.Controllers
         // GET: Appointments/Create
         public ActionResult AddAppointment()
         {
+            ViewData["queryResult"] = "true";
             ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname");
             ViewBag.id_af458_customers = new SelectList(db.af458_customers, "id", "lastname");
             return View();
@@ -53,11 +55,22 @@ namespace JML_Traders.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.af458_appointments.Add(af458_appointments);
-                db.SaveChanges();
-                return RedirectToAction("listAppointments");
+                int id = af458_appointments.id_af458_brokers;
+                DateTime rdv = af458_appointments.dateHour;
+                if (db.af458_appointments.SqlQuery("SET DATEFORMAT dmy SELECT * FROM af458_appointments WHERE id_af458_brokers = " + id + " AND dateHour = '" + rdv + "'").Count() == 0)
+                {
+                    db.af458_appointments.Add(af458_appointments);
+                    db.SaveChanges();
+                    return RedirectToAction("listAppointments");
+                }
+                else
+                {
+                    ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname");
+                    ViewBag.id_af458_customers = new SelectList(db.af458_customers, "id", "lastname");
+                    ViewData["queryResult"] = "false";
+                    return View();
+                }
             }
-
             ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname", af458_appointments.id_af458_brokers);
             ViewBag.id_af458_customers = new SelectList(db.af458_customers, "id", "lastname", af458_appointments.id_af458_customers);
             return View(af458_appointments);
@@ -101,36 +114,11 @@ namespace JML_Traders.Controllers
         // GET: Appointments/Delete/5
         public ActionResult Delete(int? id)
         {
-            /*
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            af458_appointments af458_appointments = db.af458_appointments.Find(id);
-            if (af458_appointments == null)
-            {
-                return HttpNotFound();
-            }
-            return View(af458_appointments);
-        }
-            */
             af458_appointments af458_appointments = db.af458_appointments.Find(id);
             db.af458_appointments.Remove(af458_appointments);
             db.SaveChanges();
             return RedirectToAction("listAppointments");
         }
-        /*
-            // POST: Appointments/Delete/5
-            [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            af458_appointments af458_appointments = db.af458_appointments.Find(id);
-            db.af458_appointments.Remove(af458_appointments);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        */
 
         protected override void Dispose(bool disposing)
         {

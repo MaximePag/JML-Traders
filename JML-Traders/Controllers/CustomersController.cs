@@ -39,6 +39,7 @@ namespace JML_Traders.Controllers
         // GET: Customers/Create
         public ActionResult addCustomer()
         {
+            ViewData["queryResult"] = "true";
             ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname");
             return View();
         }
@@ -52,9 +53,19 @@ namespace JML_Traders.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.af458_customers.Add(af458_customers);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                string mail = af458_customers.mail;
+                if (db.af458_customers.SqlQuery("SELECT * FROM af458_customers WHERE af458_customers.mail = 'admin@dev.io'").Count() == 0)
+                {
+                    db.af458_customers.Add(af458_customers);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname");
+                    ViewData["queryResult"] = "false";
+                    return View();
+                }
             }
 
             ViewBag.id_af458_brokers = new SelectList(db.af458_brokers, "id", "lastname", af458_customers.id_af458_brokers);

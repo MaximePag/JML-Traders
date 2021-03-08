@@ -1,11 +1,18 @@
 ﻿@model JML_Traders.Models.af458_brokers
 
 @{
+    var queryResult = ViewData["queryResult"].ToString();
+}
+
+@{
     ViewBag.Title = "Ajouter un Courtier";
 }
 <a class="btn btn-secondary mt-3" href="@Url.Action("Index", "Home")"><i class="fas fa-chevron-left"></i> Retour à l'accueil</a>
 <h2 class="text-center">Formulaire d'ajout d'un Courtier</h2>
-
+@if (queryResult == "false")
+{
+    <p class="text-danger text-center font-weight-bold">Ce courtier est déjà enregistré</p>
+}
 
 @using (Html.BeginForm())
 {

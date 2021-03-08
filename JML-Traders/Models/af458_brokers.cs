@@ -24,6 +24,7 @@ namespace JML_Traders.Models
     
         public int id { get; set; }
 
+
         [Display(Name = "Nom du courtier :")]
         public string lastname { get; set; }
 

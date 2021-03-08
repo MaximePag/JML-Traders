@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<JML_Traders.Models.af458_appointments>
+
+@{
     ViewBag.Title = "Accueil";
 }
 
@@ -8,5 +10,44 @@
         <hr class="subline-orange" />
         <h3 class="title-link text-center">@Html.ActionLink("Liste des Rendez-Vous du jour", "ListAppointments", "Home")</h3>
         <hr class="subline-orange" />
+        <table class="table table-responsive-lg table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.dateHour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.af458_brokers.lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.af458_customers.lastname)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dateHour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.subject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.af458_brokers.lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.af458_customers.lastname)
+                    </td>
+                    <td>
+                        <a class="btn btn-blue mx-2" href="@Url.Action("Appointment", "Appointments", new { id = item.id })"><i class="fas fa-calendar-alt"></i> Rendez-vous</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
     </div>
 </div>

@@ -23,17 +23,22 @@ namespace JML_Traders.Models
 
         public int id { get; set; }
 
+        [Required(ErrorMessage = "Veuillez préciser la date et l'heure du rendez-vous")]
         [Display(Name = "Date et Heure du rendez-vous :")]
         public System.DateTime dateHour { get; set; }
 
+        [Required(ErrorMessage = "Veuillez préciser l'objet du rendez-vous")]
         [Display(Name = "Objet du rendez-vous :")]
         public string subject { get; set; }
 
+
+        [Required(ErrorMessage = "Veuillez préciser le nom du courtier")]
         public int id_af458_brokers { get; set; }
 
+        [Required(ErrorMessage = "Veuillez préciser le nom du client")]
         public int id_af458_customers { get; set; }
         
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual af458_brokers af458_brokers { get; set; }
 
